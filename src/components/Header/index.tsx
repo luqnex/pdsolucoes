@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
 
-import { 
-    Container
+import {
+    Container, 
+    Content
  } from './styles'
 
-export function SideBar() {
+export function Header() {
     return (
         <Container>
+            <Content>
+            <h1>pd<span>Query</span></h1>
             <ul>
                 <Link to="/">
                     <li>Gerar atividade aleatória</li>
@@ -20,6 +23,7 @@ export function SideBar() {
                     <li>Gerar atividade pela chave</li>
                 </Link>
             </ul>
+        </Content>
         </Container>
     )
 }

@@ -1,6 +1,11 @@
 import { useState } from "react"
-import { SideBar } from "../../components/SideBar"
+import { Header } from "../../components/Header"
 import { api } from "../../services/api"
+
+import { 
+    Card,
+    Button 
+} from "../../styles/global"
 
 import { 
     Container,
@@ -28,7 +33,7 @@ export function PageType() {
 
     return (
         <Container>  
-            <SideBar />
+            <Header />
             <Content>
                 <h1>Buscar uma atividade pelo seu tipo</h1>
 
@@ -37,17 +42,17 @@ export function PageType() {
                     onChange={(e) => setInput(e.target.value)}
                 />
 
-                <button type='button' onClick={handleItemRandom}>Buscar atividade</button>
+                <Button type='button' onClick={handleItemRandom}>Buscar atividade</Button>
 
                 {
-                    <div>
+                    <Card>
                         <p>Activity: { item.activity }</p>
                         <p>Chave: { item.key }</p>
                         <p>Link: { item.link }</p>
                         <p>Participantes: { item.participants }</p>
                         <p>Preço: { item.price }</p>
                         <p>Tipo: { item.type }</p>
-                    </div>
+                    </Card>
                 }       
             </Content>
         </Container>

@@ -5,11 +5,12 @@ export const Container = styled.div`
     height: 100vh;
 
     display: flex;
+    flex-direction: column;
 `
 
 export const Content = styled.div`
-    width: 70vw;
-    min-height: 100vh;
+    width: 100vw;
+    min-height: 80vh;
 
     display: flex;
     flex-direction: column;

@@ -1,5 +1,10 @@
 import { api } from "../../services/api"
-import { SideBar } from "../../components/SideBar"
+import { Header } from "../../components/Header"
+
+import { 
+    Card,
+    Button 
+} from '../../styles/global'
 
 import { 
     Container,
@@ -34,20 +39,20 @@ export function PageRandom() {
 
     return (
         <Container>  
-            <SideBar />
+            <Header />
             <Content>
                 <h1>Buscar uma atividade aleatória</h1>
-                <button type='button' onClick={handleItemRandom}>Buscar atividade</button>
+                <Button type='button' onClick={handleItemRandom}>Buscar atividade</Button>
 
                 {
-                    <div key={ item.key }>
+                    <Card key={ item.key }>
                         <p>Activity: { item.activity }</p>
                         <p>Chave: { item.key }</p>
                         <p>Link: { item.link }</p>
                         <p>Participantes: { item.participants }</p>
                         <p>Preço: { item.price }</p>
                         <p>Tipo: { item.type }</p>
-                    </div>
+                    </Card>
                 }       
             </Content>
         </Container>
