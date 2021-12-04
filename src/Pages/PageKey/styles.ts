@@ -14,13 +14,9 @@ export const Content = styled.div`
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-    h1 {
-        margin-top: 20px;
-    }
+    align-items: center; 
     
-    button {
-        margin-top: 50px;
+    h3 {
+        font-size: 1.1rem;
     }
 `

@@ -3,7 +3,8 @@ import { Header } from "../../components/Header"
 
 import { 
     Card,
-    Button 
+    Button, 
+    Loading
 } from '../../styles/global'
 
 import { 
@@ -22,37 +23,51 @@ interface ItemRandom {
 }
 
 export function PageRandom() {
-    const [item, setItem] = useState<ItemRandom>({
-        activity: 'Exemplo de atividade',
-        type: 'Tipo da atividade',
-        participants: 'Participantes',
-        price: 'Preço da atividade',
-        link: 'Link para a atividade',
-        key: '',
-    })
+    const [item, setItem] = useState<ItemRandom>()
+    const [favorited, setFavorited] = useState([])
+    const [loading, setLoading] = useState(false)
 
     const handleItemRandom = async () => {
-
+        setItem(undefined)
+        setLoading(true)
         await api.get("/activity")
         .then(response => setItem(response.data))
+        setLoading(false)
+    }
+
+    const handleFavorit = () => {
+        const listFavorite = [item]
+        console.log(listFavorite)
     }
 
     return (
         <Container>  
             <Header />
             <Content>
-                <h1>Buscar uma atividade aleatória</h1>
+                <h2>Buscar uma atividade aleatória</h2>
                 <Button type='button' onClick={handleItemRandom}>Buscar atividade</Button>
 
                 {
+                    item ?  
                     <Card key={ item.key }>
-                        <p>Activity: { item.activity }</p>
-                        <p>Chave: { item.key }</p>
-                        <p>Link: { item.link }</p>
-                        <p>Participantes: { item.participants }</p>
-                        <p>Preço: { item.price }</p>
-                        <p>Tipo: { item.type }</p>
+                        <div className="content">
+                            <h2>Busca aleatória</h2>
+                            <p>Activity: { item.activity }</p>
+                            <p>Type: { item.type }</p>
+                            <p>Participants: { item.participants }</p>
+                            <p>Price: { item.price }</p>
+                            <p>Link: { item.link }</p>
+                            <p>Key: { item.key }</p>
+                            <Button onClick={handleFavorit}>favoritar</Button>
+                        </div>
                     </Card>
+                    : <div>
+                        {
+                            loading ? 
+                                <Loading />
+                                : ''
+                        }
+                    </div>
                 }       
             </Content>
         </Container>
