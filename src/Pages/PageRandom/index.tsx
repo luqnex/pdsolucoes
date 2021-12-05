@@ -47,8 +47,6 @@ export function PageRandom() {
                 key: item?.key,
             }
         ])
-        
-        
     }
     console.log(favorited)
 
