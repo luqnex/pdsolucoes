@@ -75,7 +75,7 @@ export const Button = styled.button`
 
 export const Card = styled.div`
     width: 35vw;
-    height: 65vh;
+    min-height: 55vh;
     position: relative;
 
     margin-top: 30px;
