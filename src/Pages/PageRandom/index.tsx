@@ -14,17 +14,17 @@ import {
 import { useState } from "react"
 
 interface ItemRandom {
-    activity: string;
-    type: string;
-    participants: string;
-    price: number | string;
+    activity?: string;
+    type?: string;
+    participants?: string;
+    price?: number | string;
     link?: string;
-    key: number | string;
+    key?: number | string;
 }
 
 export function PageRandom() {
     const [item, setItem] = useState<ItemRandom>()
-    const [favorited, setFavorited] = useState([])
+    const [favorited, setFavorited] = useState<ItemRandom[]>([])
     const [loading, setLoading] = useState(false)
 
     const handleItemRandom = async () => {
@@ -36,9 +36,21 @@ export function PageRandom() {
     }
 
     const handleFavorit = () => {
-        const listFavorite = [item]
-        console.log(listFavorite)
+        setFavorited([
+            ...favorited,
+            {
+                activity: item?.activity,
+                type: item?.type,
+                participants: item?.participants,
+                price: item?.price,
+                link: item?.link,
+                key: item?.key,
+            }
+        ])
+        
+        
     }
+    console.log(favorited)
 
     return (
         <Container>  
