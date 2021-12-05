@@ -32,6 +32,10 @@ export function Header() {
                     <Link to="/key">
                         <li>Gerar atividade pela chave</li>
                     </Link>
+
+                    <Link to="/favorite">
+                        <li>Favoritos</li>
+                    </Link>
                 </ul>
             </nav>
 

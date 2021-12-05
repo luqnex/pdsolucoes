@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Header } from "../../components/Header"
+import { ContextFavorite } from "../../context/Context"
 import { api } from "../../services/api"
 
 import { 
@@ -28,6 +29,7 @@ export function PageKey() {
     const [input, setInput] = useState('')
     const [item, setItem] = useState<ItemType>()
     const [loading, setLoading] = useState(false)
+    const [favorited, setFavorited] =  useContext<any>(ContextFavorite)
 
     const handleItemKey = async () => {
         setItem(undefined)
@@ -36,6 +38,21 @@ export function PageKey() {
         .then(response => setItem(response.data))
         setLoading(false)
     }
+
+    const handleFavorit = () => {
+        setFavorited([
+            ...favorited,
+            {
+                activity: item?.activity,
+                type: item?.type,
+                participants: item?.participants,
+                price: item?.price,
+                link: item?.link,
+                key: item?.key,
+            }
+        ])
+    }
+    console.log(favorited)
 
     return (
         <Container>  
@@ -63,7 +80,7 @@ export function PageKey() {
                             <p>Price: { item.price }</p>
                             <p>Link: { item.link }</p>
                             <p>Key: { item.key }</p>
-                            <Button>favoritar</Button>
+                            <Button onClick={handleFavorit}>favoritar</Button>
                         </div>
                     </Card>
                     : <div>

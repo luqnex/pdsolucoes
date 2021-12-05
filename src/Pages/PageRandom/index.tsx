@@ -11,7 +11,8 @@ import {
     Container,
     Content,
 } from "./styles"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ContextFavorite } from "../../context/Context"
 
 interface ItemRandom {
     activity?: string;
@@ -24,8 +25,9 @@ interface ItemRandom {
 
 export function PageRandom() {
     const [item, setItem] = useState<ItemRandom>()
-    const [favorited, setFavorited] = useState<ItemRandom[]>([])
+    //const [favorited, setFavorited] = useState<ItemRandom[]>([])
     const [loading, setLoading] = useState(false)
+    const [favorited, setFavorited] =  useContext<any>(ContextFavorite)
 
     const handleItemRandom = async () => {
         setItem(undefined)
