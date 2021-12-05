@@ -15,4 +15,10 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media(max-width: 768px) {
+        h2 {
+            font-size: 1rem;
+        }
+    }
 `

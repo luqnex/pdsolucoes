@@ -49,14 +49,71 @@ export const Content = styled.div`
     @media(max-width: 768px) {
         h1 {
             font-size: 1rem;
-        } 
+        }
         
+        .menu-togle {
+            display: block;
+            z-index: 999;
+            transition: all.3s;
+            
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .close-menu {
+            display: none;
+        }
+
         .menu {
             display: none;
         }
 
-        .menu-togle {
-            display: flex;
+        
+        
+        .active {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--header);
+            margin-top: 10px;
+            transition: all .3s;
+
+            right: 0;
+            top: -10px;
+
+            z-index: 999;
+            
+            .menu {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+
+                z-index: 10;
+            }
+
+            .content-img {
+                width: 90vw;
+                height: 10vh;
+
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            img {
+                display: block;
+            }
+
+            ul a li {
+                margin: 10px 0;
+            }
+
+            hr {
+                width: 100vw;
+            }
         }
     }
 `

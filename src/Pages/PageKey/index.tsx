@@ -43,12 +43,14 @@ export function PageKey() {
             <Content>
                 <h2>Buscar uma atividade pela chave</h2>
 
-                <Input 
-                    type="number"
-                    onChange={(e) => setInput(e.target.value)}
-                />
+                <div className="content-query">
+                    <Input 
+                        type="number"
+                        onChange={(e) => setInput(e.target.value)}
+                    />
 
-                <Button type="button" onClick={handleItemKey}>Buscar atividade</Button>
+                    <Button type="button" onClick={handleItemKey}>Buscar atividade</Button>
+                </div>
 
                 {
                     item ?  

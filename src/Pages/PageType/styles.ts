@@ -15,4 +15,24 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .content-query {
+        display: flex;
+        align-items: center;
+    }
+
+    p {
+        padding: 10px;
+    }
+
+    @media(max-width: 768px) {
+        h2 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: .8rem;
+            text-align: center;
+        }
+    }
 ` 

@@ -44,13 +44,19 @@ export function PageType() {
             <Header />
             <Content>
                 <h2>Buscar uma atividade pelo seu tipo</h2>
+                <div className="content-query">
 
-                <Input 
-                    type="text"
-                    onChange={(e) => setInput(e.target.value)}
-                />
+                    <Input 
+                        type="text"
+                        onChange={(e) => setInput(e.target.value)}
+                    />
+                    <Button type='button' onClick={handleItemType}>Buscar atividade</Button>
+                </div>
 
-                <Button type='button' onClick={handleItemType}>Buscar atividade</Button>
+                <p>
+                    <strong>Tipos de atividades:</strong> "education", "recreational", "social", "diy", "charity",
+                    "cooking", "relaxation", "music", "busywork"
+                </p>
 
                 {
                     item ?  

@@ -4,7 +4,7 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --background: #511281;
         --button: #5CD461;
-        --buton-hover: #5CD461;
+        --buton-hover: #3d8f41;
         --white: #fff;
         --header: #121214;
         --background: #F0F2F5;
@@ -29,21 +29,58 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const Input = styled.input`
-    width: 250px;
-    height: 30px;
-    border: 1px solid black;
+    width: 300px;
+    height: 40px;
+    border: none;
     border-radius: 8px;
 
+    font-size: 1rem;
+
     padding: 0 15px;
+    margin: 20px 10px 0 0;
+
+    @media(max-width: 768px) {
+        width: 200px;
+    }
+
+    @media(max-width: 320px) {
+        width: 150px;
+    }
+` 
+
+export const Button = styled.button`
+    background-color: var(--button);
+
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+
+    font-size: 1rem;
+    transition: all.3s;
+
     margin-top: 20px;
+
+    padding: 10px 15px;
+
+    &:hover {
+        background-color: var(--buton-hover);
+        cursor: pointer;
+    }
+
+    @media(max-width: 768px) {
+        font-size: .8rem;
+    }
 ` 
 
 export const Card = styled.div`
-    width: clamp(300px, 30vw, 50vw);
-    height: 55vh;
+    width: 35vw;
+    height: 65vh;
     position: relative;
 
-    margin-top: 20px;
+    margin-top: 30px;
+
+    z-index: 1;
 
     &:hover {
         color: rgb(36, 36, 36);
@@ -106,35 +143,30 @@ export const Card = styled.div`
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.055);
         transition: all .4s;
 
-        padding: 10px;
+        padding: 20px;
 
         p {
-            
             padding: 0.3rem 0;
             text-align: center;
         }
+
+        @media(max-width: 768px) {
+            h2 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: .8rem;
+            }
+        }
+    }
+
+    //Content card
+    @media(max-width: 768px) { 
+        width: 80vw;
+        height: clamp(400px, 50vh, 55vh);
     }
 `
-
-export const Button = styled.button`
-    background-color: var(--button);
-
-    width: 200px;
-    height: 40px;
-    border: none;
-    border-radius: 8px;
-    color: var(--white);
-
-    font-size: 1rem;
-    transition: all.3s;
-
-    margin-top: 20px;
-
-    &:hover {
-        background-color: var(--buton-hover);
-        cursor: pointer;
-    }
-` 
 
 export const Loading = styled.div`
     margin-top: 20px;

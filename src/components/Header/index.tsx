@@ -5,12 +5,21 @@ import {
     Content
  } from './styles'
 
+import Menu from '../../assets/icons8-menu.svg' 
+import { useState } from 'react'
+
 export function Header() {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const handleOpenAndCloseMenu = () => {
+        setIsOpen(!isOpen)
+    }
+
     return (
         <Container>
             <Content>
             <h1>pd<span>Query</span></h1>
-            <div className="menu">
+            <nav className="menu">
                 <ul>
                     <Link to="/">
                         <li>Gerar atividade aleatória</li>
@@ -24,22 +33,44 @@ export function Header() {
                         <li>Gerar atividade pela chave</li>
                     </Link>
                 </ul>
-            </div>
+            </nav>
 
             <div className="menu-togle">
-                <ul>
-                    <Link to="/">
-                        <li>Gerar atividade aleatória</li>
-                    </Link>
+                <img 
+                    src={Menu} 
+                    alt="Menu"
+                    onClick={handleOpenAndCloseMenu}
+                />
 
-                    <Link to="/type">
-                        <li>Gerar atividade pelo tipo</li>
-                    </Link>
+                <nav className={isOpen ? 'active' : ''}>
+                    <div className="content-img">
+                        <img 
+                            className="close-menu"
+                            src={Menu} 
+                            alt="Menu"
+                            onClick={handleOpenAndCloseMenu}
+                        />
+                    </div>
+                    <ul className="menu">
+                        <Link to="/">
+                            <li>Gerar atividade aleatória</li>
+                        </Link>
 
-                    <Link to="/key">
-                        <li>Gerar atividade pela chave</li>
-                    </Link>
-                </ul>
+                        <hr />
+
+                        <Link to="/type">
+                            <li>Gerar atividade pelo tipo</li>
+                        </Link>
+
+                        <hr />
+
+                        <Link to="/key">
+                            <li>Gerar atividade pela chave</li>
+                        </Link>
+
+                        <hr />
+                    </ul>
+                </nav>
             </div>
         </Content>
         </Container>

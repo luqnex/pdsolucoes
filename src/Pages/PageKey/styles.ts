@@ -19,4 +19,15 @@ export const Content = styled.div`
     h3 {
         font-size: 1.1rem;
     }
+
+    .content-query {
+        display: flex;
+        align-items: center;
+    }
+
+    @media(max-width: 768px) {
+        h2 {
+            font-size: 1rem;
+        }
+    }
 `
