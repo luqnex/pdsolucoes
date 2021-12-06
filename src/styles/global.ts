@@ -8,6 +8,9 @@ export const GlobalStyle = createGlobalStyle`
         --header: #121214;
         --background: #F0F2F5;
         --border-input: #969CB2;
+
+        --danger: #8F2124;
+        --background-danger: #F8D7DA;
     }
     
     * {

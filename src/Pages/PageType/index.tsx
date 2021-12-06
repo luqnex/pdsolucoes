@@ -75,25 +75,27 @@ export function PageType() {
                     <strong>Tipos de atividades:</strong> "education", "recreational", "social", "diy", "charity",
                     "cooking", "relaxation", "music", "busywork"
                 </p>
-
+     
                 {
-                    item ?  
-                    <CardComponent key={ item.key }>
-                        <h3>Busca pelo tipo</h3>
-                        <p><span>Activity:</span> { item.activity }</p>
-                        <p><span>Type:</span> { item.type }</p>
-                        <p><span>Participants:</span> { item.participants }</p>
-                        <p><span>Price:</span> { item.price }</p>
-                        <p><span>Link:</span> { item.link }</p>
-                        <p><span>Key:</span> { item.key }</p>
-                        <Button onClick={handleFavorit}>Salvar como favorita</Button>
-                    </CardComponent>
-                    : <div>
-                        {
-                            loading ? <Loading /> : ''
-                        }
-                    </div>
-                }        
+                    // Existe um erro? se sim informe na tela, caso não renderizer o card.
+                    item?.error ? <span className="error">{item.error}</span> 
+                    : item ?  
+                        <CardComponent key={ item.key }>
+                            <h3>Busca pelo tipo</h3>
+                            <p><span>Activity:</span> { item.activity }</p>
+                            <p><span>Type:</span> { item.type }</p>
+                            <p><span>Participants:</span> { item.participants }</p>
+                            <p><span>Price:</span> { item.price }</p>
+                            <p><span>Link:</span> { item.link }</p>
+                            <p><span>Key:</span> { item.key }</p>
+                            <Button onClick={handleFavorit}>Salvar como favorita</Button>
+                        </CardComponent>
+                        : <div>
+                            {
+                                loading ? <Loading /> : ''
+                            }
+                        </div>
+                }       
             </Content>
         </Container>
     )

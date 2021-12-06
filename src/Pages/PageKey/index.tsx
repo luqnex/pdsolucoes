@@ -71,22 +71,24 @@ export function PageKey() {
                 </div>
 
                 {
-                    item ?  
-                    <CardComponent key={ item.key }>
-                        <h3>Busca pela chave</h3>
-                        <p><span>Activity:</span> { item.activity }</p>
-                        <p><span>Type:</span> { item.type }</p>
-                        <p><span>Participants:</span> { item.participants }</p>
-                        <p><span>Price:</span> { item.price }</p>
-                        <p><span>Link:</span> { item.link }</p>
-                        <p><span>Key:</span> { item.key }</p>
-                        <Button onClick={handleFavorit}>Salvar como favorita</Button>
-                    </CardComponent>
-                    : <div>
-                        {
-                            loading ? <Loading /> : ''
-                        }
-                    </div>
+                    // Existe um erro? se sim informe na tela, caso não renderizer o card.
+                    item?.error ? <div className="error">{item.error}</div> 
+                    : item ?  
+                        <CardComponent key={ item.key }>
+                            <h3>Busca pela chave</h3>
+                            <p><span>Activity:</span> { item.activity }</p>
+                            <p><span>Type:</span> { item.type }</p>
+                            <p><span>Participants:</span> { item.participants }</p>
+                            <p><span>Price:</span> { item.price }</p>
+                            <p><span>Link:</span> { item.link }</p>
+                            <p><span>Key:</span> { item.key }</p>
+                            <Button onClick={handleFavorit}>Salvar como favorita</Button>
+                        </CardComponent>
+                        : <div>
+                            {
+                                loading ? <Loading /> : ''
+                            }
+                        </div>
                 }    
             </Content>
         </Container>

@@ -18,6 +18,19 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: center;
 
+    .error {
+        width: 50vw;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--background-danger);
+        color: var(--danger);
+        border: 1px solid var(--danger);
+        border-radius: 8px;
+        margin-top: 30px;
+    }
+
     .content-query {
         display: flex;
         align-items: center;
