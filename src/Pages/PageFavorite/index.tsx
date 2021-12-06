@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
+import { CardComponent } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { ContextFavorite } from "../../context/Context";
 
-import { Button, Card } from "../../styles/global";
+import { Button } from "../../styles/global";
 
 import { 
     Container,
@@ -28,21 +29,19 @@ export function PageFavorite() {
                 {
                     favorited.map((favorite: any) => {
                         return (
-                                <Card key={favorite.key}>
-                                    <div className="content">
-                                        <p>Activity: { favorite.activity }</p>
-                                        <p>Type: { favorite.type }</p>
-                                        <p>Participants: { favorite.participants }</p>
-                                        <p>Price: { favorite.price }</p>
-                                        <p>Link: { favorite.link }</p>
-                                        <p>Key: { favorite.key }</p>
-                                        <Button 
-                                            onClick={() => handleRemoveFavorit(favorite.key)}
-                                        >
-                                                Remover dos favoritos
-                                        </Button>
-                                    </div>
-                                </Card>
+                                <CardComponent key={favorite.key}>
+                                    <p>Activity: { favorite.activity }</p>
+                                    <p>Type: { favorite.type }</p>
+                                    <p>Participants: { favorite.participants }</p>
+                                    <p>Price: { favorite.price }</p>
+                                    <p>Link: { favorite.link }</p>
+                                    <p>Key: { favorite.key }</p>
+                                    <Button 
+                                        onClick={() => handleRemoveFavorit(favorite.key)}
+                                    >
+                                            Remover dos favoritos
+                                    </Button>
+                                </CardComponent>
                         )
                     })
                 }
