@@ -25,7 +25,6 @@ interface ItemRandom {
 
 export function PageRandom() {
     const [item, setItem] = useState<ItemRandom>()
-    //const [favorited, setFavorited] = useState<ItemRandom[]>([])
     const [loading, setLoading] = useState(false)
     const [favorited, setFavorited] =  useContext<any>(ContextFavorite)
 
@@ -49,8 +48,9 @@ export function PageRandom() {
                 key: item?.key,
             }
         ])
+
+        window.alert('Atividade salva')
     }
-    console.log(favorited)
 
     return (
         <Container>  
@@ -70,7 +70,7 @@ export function PageRandom() {
                             <p>Price: { item.price }</p>
                             <p>Link: { item.link }</p>
                             <p>Key: { item.key }</p>
-                            <Button onClick={handleFavorit}>favoritar</Button>
+                            <Button onClick={handleFavorit}>Salvar como favorita</Button>
                         </div>
                     </Card>
                     : <div>

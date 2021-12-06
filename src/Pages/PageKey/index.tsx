@@ -51,8 +51,9 @@ export function PageKey() {
                 key: item?.key,
             }
         ])
+
+        window.alert('Atividade salva')
     }
-    console.log(favorited)
 
     return (
         <Container>  
@@ -80,7 +81,7 @@ export function PageKey() {
                             <p>Price: { item.price }</p>
                             <p>Link: { item.link }</p>
                             <p>Key: { item.key }</p>
-                            <Button onClick={handleFavorit}>favoritar</Button>
+                            <Button onClick={handleFavorit}>Salvar como favorita</Button>
                         </div>
                     </Card>
                     : <div>

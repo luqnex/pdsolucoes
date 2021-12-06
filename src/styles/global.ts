@@ -20,6 +20,8 @@ export const GlobalStyle = createGlobalStyle`
     html {
         font-family: 'Poppins', sans-serif;
         background: var(--background);
+
+        overflow-x: hidden;
     }
 
     h2 {
@@ -75,12 +77,16 @@ export const Button = styled.button`
 
 export const Card = styled.div`
     width: 35vw;
-    min-height: 55vh;
+    height: 60vh;
     position: relative;
 
-    margin-top: 30px;
+    margin: 30px 0 20px 0;
 
     z-index: 1;
+
+    &:last-child {
+        margin-bottom: 50px;
+    }
 
     &:hover {
         color: rgb(36, 36, 36);
@@ -148,6 +154,10 @@ export const Card = styled.div`
         p {
             padding: 0.3rem 0;
             text-align: center;
+        }
+
+        button {
+            margin-bottom: 20px;
         }
 
         @media(max-width: 768px) {
