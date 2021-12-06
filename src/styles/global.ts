@@ -2,13 +2,12 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --background: #511281;
         --button: #5CD461;
         --buton-hover: #3d8f41;
         --white: #fff;
         --header: #121214;
         --background: #F0F2F5;
-        --background-card: gray;
+        --border-input: #969CB2;
     }
     
     * {
@@ -33,7 +32,8 @@ export const GlobalStyle = createGlobalStyle`
 export const Input = styled.input`
     width: 300px;
     height: 40px;
-    border: none;
+    border: 1px solid var(--border-input);
+;
     border-radius: 8px;
 
     font-size: 1rem;
@@ -76,7 +76,7 @@ export const Button = styled.button`
 ` 
 
 export const Card = styled.div`
-    width: 35vw;
+    width: clamp(400px, 35vw, 40vw);
     height: 60vh;
     position: relative;
 
@@ -171,8 +171,12 @@ export const Card = styled.div`
         }
 
         @media(max-width: 768px) {
-            h2 {
+            h2{
                 font-size: 1rem;
+            }
+
+            h3 {
+                font-size: .9rem;
             }
 
             p {
@@ -184,7 +188,28 @@ export const Card = styled.div`
     //Content card
     @media(max-width: 768px) { 
         width: 80vw;
-        height: clamp(400px, 50vh, 55vh);
+        height: 55vh;
+
+        &:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            display: none;
+        }
+
+        .content {
+            background: var(--header);
+        }
+
+        &:hover .content {
+            color: var(--white);
+        }
     }
 `
 

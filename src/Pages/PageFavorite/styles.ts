@@ -22,4 +22,10 @@ export const Content = styled.div`
     h3 {
         font-size: 1.1rem;
     }
+
+    @media(max-width: 768px) {
+        h2 {
+            font-size: 1rem;
+        }
+    }
 `

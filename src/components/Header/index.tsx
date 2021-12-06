@@ -73,6 +73,12 @@ export function Header() {
                         </Link>
 
                         <hr />
+
+                        <Link to="/favorite">
+                            <li>Favoritos</li>
+                        </Link>
+
+                        <hr />
                     </ul>
                 </nav>
             </div>
