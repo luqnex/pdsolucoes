@@ -17,11 +17,7 @@
     <li>Listar as atividades marcadas como favoritas</li>
 </ul>
 
-<br />
-
 <h2>🔧 Instruções para rodar está aplicação</h2>
-
-</br>
 
 <p>1° - Clone o repositorio utilizando o seu terminal de preferencia</p>
 
@@ -37,11 +33,10 @@
    cd pdsolucoes && yarn && yarn start
 ```
 
-</br>
-
 <h2>🛠️ Bibliotecas / Linguagens</h2>
 
 * [React](https://pt-br.reactjs.org/) - O React é uma biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.
+* [TypeScript](https://www.typescriptlang.org/) - TypeScript é uma linguagem de programação fortemente tipada que se baseia em JavaScript, oferecendo melhores ferramentas em qualquer escala.
 * [react-router-dom](https://v5.reactrouter.com/web/guides/quick-start) - O React Router é uma biblioteca para controle de rotas.
 * [styled-components](https://styled-components.com/) - styled-components é uma biblioteca para React e React Native que permite que você use estilos ao nível de componente na sua aplicação.
 * [axios](https://axios-http.com/docs/intro) - Axios é um cliente HTTP baseado em promessas para o node. js e para o navegador.
