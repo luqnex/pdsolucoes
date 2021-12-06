@@ -19,6 +19,8 @@
 
 <h2>🔧 Instruções para rodar está aplicação</h2>
 
+<strong>Obs. necessario ter node.js instalado no seu PC/Notebook.</strong>
+
 <p>1° - Clone o repositorio utilizando o seu terminal de preferencia</p>
 
 ```bash
