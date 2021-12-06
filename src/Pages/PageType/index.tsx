@@ -66,7 +66,7 @@ export function PageType() {
 
                     <Input 
                         type="text"
-                        onChange={(e) => setInput(e.target.value)}
+                        onChange={(e) => setInput(e.target.value.toLocaleLowerCase())}
                     />
                     <Button type='button' onClick={handleItemType}>Buscar atividade</Button>
                 </div>
