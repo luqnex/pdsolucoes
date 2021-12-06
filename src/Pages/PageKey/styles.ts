@@ -16,10 +16,6 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: center; 
     
-    h3 {
-        font-size: 1.1rem;
-    }
-
     .content-query {
         display: flex;
         align-items: center;

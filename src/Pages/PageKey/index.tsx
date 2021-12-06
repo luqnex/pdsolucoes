@@ -75,12 +75,12 @@ export function PageKey() {
                     <Card key={ item.key }>
                         <div className="content">
                             <h3>Busca pela chave</h3>
-                            <p>Activity: { item.activity }</p>
-                            <p>Type: { item.type }</p>
-                            <p>Participants: { item.participants }</p>
-                            <p>Price: { item.price }</p>
-                            <p>Link: { item.link }</p>
-                            <p>Key: { item.key }</p>
+                            <p><span>Activity:</span> { item.activity }</p>
+                            <p><span>Type:</span> { item.type }</p>
+                            <p><span>Participants:</span> { item.participants }</p>
+                            <p><span>Price:</span> { item.price }</p>
+                            <p><span>Link:</span> { item.link }</p>
+                            <p><span>Key:</span> { item.key }</p>
                             <Button onClick={handleFavorit}>Salvar como favorita</Button>
                         </div>
                     </Card>

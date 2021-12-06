@@ -150,10 +150,20 @@ export const Card = styled.div`
         transition: all .4s;
 
         padding: 20px;
+        
+        h3 {
+            font-size: 1.1rem;
+        }
 
         p {
             padding: 0.3rem 0;
             text-align: center;
+            font-size: 1rem;
+            font-weight: 200;
+
+            span {
+                font-weight: bold;
+            }
         }
 
         button {
